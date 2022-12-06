@@ -38,7 +38,6 @@
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
             </div>
-
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
@@ -50,6 +49,19 @@
                     {{ __('Log in') }}
                 </x-primary-button>
             </div>
+            <div class="block mt-4">
+                <p class="text-muted text-center"><b>OR</b> login with</p>
+                <div class="flex items-center justify-center mt-4">
+                    <a class="btn btn-primary" href="{{ url('auth/facebook') }}" id="btn-fblogin" style="font-size: 20px; color: #fff; padding: 0px 13px; border: 1px solid #1771ed; background: #1771ed; border-radius: 5px;">
+                        <i class="bi bi-facebook" aria-hidden="true"></i> facebook
+                    </a>
+                    <a class="btn" href="{{ url('auth/linkedin') }}" style="font-size: 20px; color: #fff; padding: 0px 13px; border: 1px solid #003f67; background: #003f67; border-radius: 5px; margin: 5px;">
+                        <i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            
         </form>
     </x-auth-card>
 </x-guest-layout>

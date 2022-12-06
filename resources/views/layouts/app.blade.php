@@ -9,6 +9,15 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+        <style>
+            .nav-profile-img {
+                width: 40px;
+                height: 40px;
+                border: 0px solid #bed8ff;
+                border-radius: 20px;
+                margin-right: 10px;
+            }
+        </style>
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])

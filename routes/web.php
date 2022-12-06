@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\LinkedinController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome')->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,3 +29,12 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::controller(FacebookController::class)->group(function(){
+    Route::get('auth/facebook', 'redirectToFacebook')->name('auth.facebook');
+    Route::get('auth/facebook/callback', 'handleFacebookCallback');
+});
+Route::controller(LinkedinController::class)->group(function(){
+    Route::get('auth/linkedin', 'redirectToLinkedin')->name('auth.linkedin');
+    Route::get('auth/linkedin/callback', 'handleLinkedinCallback');
+});
