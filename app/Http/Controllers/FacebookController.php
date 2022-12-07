@@ -49,7 +49,7 @@ class FacebookController extends Controller
                 $newUser = User::updateOrCreate(['email' => $user->email],[
                     'name' => $user->name,
                     'password' => encrypt($user->id),
-                    'avatar' => $user->avatar_original
+                    'avatar' => $user->avatar
                 ]);
                 Social::create([
                     'user_id' => $newUser->id,
