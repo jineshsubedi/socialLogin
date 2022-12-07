@@ -46,7 +46,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function avatar(): Attribute
+    public function image(): Attribute
     {
         return Attribute::make(
             get: fn() => $this->avatar != null ? $this->avatar : 'https://eu.ui-avatars.com/api/?name='.$this->name,

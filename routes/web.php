@@ -16,7 +16,7 @@ use App\Http\Controllers\LinkedinController;
 |
 */
 
-Route::view('/', 'welcome')->name('welcome');
+Route::view('/', 'landing')->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

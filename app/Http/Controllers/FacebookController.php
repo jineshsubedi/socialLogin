@@ -63,7 +63,7 @@ class FacebookController extends Controller
             }
        
         } catch (Exception $e) {
-            dd($e->getMessage());
+            return redirect()->intended('login');
         }
     }
 }

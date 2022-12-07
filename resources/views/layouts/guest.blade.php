@@ -7,6 +7,10 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <!-- Favicons -->
+        <link href="assets/img/jnslogo.png" rel="icon">
+        <link href="assets/img/jnslogo.png" rel="apple-touch-icon">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
         <!-- Vendor CSS Files -->
