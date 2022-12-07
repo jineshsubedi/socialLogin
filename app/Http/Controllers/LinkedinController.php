@@ -49,7 +49,7 @@ class LinkedinController extends Controller
                 $newUser = User::updateOrCreate(['email' => $user->email],[
                     'name' => $user->name,
                     'password' => encrypt($user->id),
-                    'avatar' => $path
+                    'avatar' => $user->avatar_original
                 ]);
                 Social::create([
                     'user_id' => $newUser->id,

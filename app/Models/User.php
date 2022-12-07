@@ -46,12 +46,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $appends = ['image'];
-
-    public function image(): Attribute
+    public function avatar(): Attribute
     {
         return Attribute::make(
-            get: fn() => $this->avatar != null && Storage::exists($this->avatar) ? Storage::url($this->avatar) : 'https://eu.ui-avatars.com/api/?name='.$this->name,
+            get: fn() => $this->avatar != null ? $this->avatar : 'https://eu.ui-avatars.com/api/?name='.$this->name,
         );
     }
 }
